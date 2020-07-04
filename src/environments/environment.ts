@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBBD9p2ZnUeZhxQJI33ZcLWVp-GBMIKEl4",
+    authDomain: "chatflutter-3ce04.firebaseapp.com",
+    databaseURL: "https://chatflutter-3ce04.firebaseio.com",
+    projectId: "chatflutter-3ce04",
+    storageBucket: "chatflutter-3ce04.appspot.com",
+    messagingSenderId: "995288831709",
+    appId: "1:995288831709:web:6d97068d8057caded4ad34"
+
+  }
 };
 
 /*
