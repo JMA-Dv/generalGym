@@ -1,34 +1,44 @@
 <div class="container">
-    <div class="text-center">
-        <img src="../../assets/logo_gym.jpg" alt="logo">
-        <h3>Bienvenido, ingresar sus datos</h3>
-    </div>
-    <form [formGroup]="formLogin">
-        <div class="form-group">
-          <label for="email">Correo electronico</label>
-          <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp" placeholder="Ingrese su correo">
-          
-          <div class="alert alert-danger" *ngIf="formLogin.controls['email'].invalid && formLogin.controls['email'].dirty"  role="alert">
-            
-            <span *ngIf="formLogin.controls['email'].errors.required">Correo es requerido</span>
-            <span *ngIf="formLogin.controls['email'].errors.email">Correo no es valido</span>
+  <div class="text-center">
+    <img src="../../assets/logo_gym.jpg" alt="logo">
+    <h3>Bienvenido, Ingresar sus datos</h3>
+  </div>
+  <form [formGroup]="formLogin">
+    <div class="form-group">
+      <label for="email">Correo electronico</label>
+      <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp"
+        placeholder="Ingrese su correo">
 
-          </div>
-        </div>
+      <div class="alert alert-danger" *ngIf="formLogin.controls['email'].invalid && formLogin.controls['email'].dirty"
+        role="alert">
 
-        <div class="form-group">
-          <label for="password">Constraseña</label>
-          <input type="password" (keyUp.enter)="ingresar()" class="form-control" formControlName="password" id="password" placeholder="Ingrese su contraseña">
-          <div *ngIf="formLogin.controls['password'].invalid && formLogin.controls['password'].dirty"  class="alert alert-dangver" role="alert">
-                <span *ngIf="formLogin  .controls['password'].errors.required">La contraseña es requerida</span>
-          </div>
-        </div>
-        
-        <button type="submit" [disabled]="!formLogin.valid" (click)="ingresar()" class="btn btn-primary">Ingresar</button>
-      </form>
+        <span *ngIf="formLogin.controls['email'].errors.required">Correo es requerido</span>
+        <span *ngIf="formLogin.controls['email'].errors.email">Correo no es valido</span>
 
-      <div *ngIf="!correctData" class="alert alert-warning" role="alert">
-        {{textError}}
       </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Constraseña</label>
+      <input type="password" (keyUp.enter)="ingresar()" class="form-control" formControlName="password" id="password"
+        placeholder="Ingrese su contraseña">
+      <div *ngIf="formLogin.controls['password'].invalid && formLogin.controls['password'].dirty"
+        class="alert alert-dangver" role="alert">
+        <span *ngIf="formLogin  .controls['password'].errors.required">La contraseña es requerida</span>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!formLogin.valid" (click)="ingresar()" class="btn btn-primary">Ingresar</button>
+  </form>
+
+  <div *ngIf="!correctData" class="alert alert-warning" role="alert">
+    {{textError}}
+  </div>
+
+
+  <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-scale-ripple-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+    </ngx-spinner>
 
 </div>
