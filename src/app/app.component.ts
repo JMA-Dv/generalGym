@@ -12,21 +12,14 @@ export class AppComponent {
   title = 'generalGym';
   usuario: User;
   cargando: boolean = true;
-  constructor(public afAuth: AngularFireAuth) {
 
+  constructor(public afAuth: AngularFireAuth) {
     this.afAuth.user.subscribe((usuario) => {
       setTimeout(() => {
         this.cargando = false;
         this.usuario = usuario;
 
-      }, 2000);
+      }, 400);
     });
-  }
-
-  login() {
-    this.afAuth.auth.signInWithEmailAndPassword('mata@gmail.com', '123456');
-  }
-  logout() {
-    this.afAuth.auth.signOut();
   }
 }
