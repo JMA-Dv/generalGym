@@ -76,7 +76,7 @@
 
                 <div class="form-group">
                     <label for="">Imagen</label>
-                    <input type="file" class="form-control-file" formControlName="imgUrl" placeholder="Agregue imagen">
+                    <input type="file" (change)="uploadImage($event )" class="form-control-file" formControlName="imgUrl" placeholder="Agregue imagen">
                     <div *ngIf="clientForm.controls['imgUrl'].invalid && clientForm.controls['imgUrl'].dirty" class="alert alert-danger" role="alert">
                         <span *ngIf="clientForm.controls['imgUrl'].errors.required">Campo requerido</span>
                     </div>
@@ -86,13 +86,14 @@
             </div>
 
             <div class="col-sm-12">
-                <progressbar [value]="22" type="danger" [striped]="true">22%</progressbar>
+                <progressbar [value]="percentage" type="danger" [striped]="true">{{percentage}}</progressbar>
             </div>
 
             <br><br>
         </div>
-        <button class="btn btn-primary" [disabled]="clientForm.invalid" (click)="add()">Registrar</button>
-
+        <button *ngIf="!editable" class="btn btn-primary" [disabled]="clientForm.invalid && !imgUrl" (click)="add()">Registrar</button>
+        <button *ngIf="editable" class="btn btn-primary" [disabled]="clientForm.invalid && !imgUrl" (click)="edit()">Editar</button>
+        
     </form>
 
 </div>

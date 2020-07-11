@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 import { environment } from 'src/environments/environment';
 
@@ -38,6 +39,7 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
     BsDropdownModule.forRoot(),
     ReactiveFormsModule,
     NgxSpinnerModule,
+    AngularFireStorageModule,
     AccordionModule.forRoot(),
     ProgressbarModule.forRoot(),
     BrowserAnimationsModule,
