@@ -23,8 +23,8 @@
       <input type="password" (keyUp.enter)="ingresar()" class="form-control" formControlName="password" id="password"
         placeholder="Ingrese su contraseña">
       <div *ngIf="formLogin.controls['password'].invalid && formLogin.controls['password'].dirty"
-        class="alert alert-dangver" role="alert">
-        <span *ngIf="formLogin  .controls['password'].errors.required">La contraseña es requerida</span>
+        class="alert alert-danger" role="alert">
+        <span *ngIf="formLogin.controls['password'].errors.required">La contraseña es requerida</span>
       </div>
     </div>
 

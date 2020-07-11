@@ -20,12 +20,16 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
+import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.component';
+
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     EncabezadoComponent,
-    ListadoClientesComponent
+    ListadoClientesComponent,
+    AgregarClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,7 @@ import { ListadoClientesComponent } from './listado-clientes/listado-clientes.co
     ReactiveFormsModule,
     NgxSpinnerModule,
     AccordionModule.forRoot(),
+    ProgressbarModule.forRoot(),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],

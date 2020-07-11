@@ -1,0 +1,98 @@
+<div class="container mt-5">
+    <form [formGroup]="clientForm">
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" formControlName="nombre" class="form-control" placeholder="Agregue nombre">
+                    <div *ngIf="clientForm.controls['nombre'].invalid && clientForm.controls['nombre'].dirty" class="alert alert-danger" role="alert">
+                    
+                        <span *ngIf="clientForm.controls['nombre'].errors.required">Campo requerido</span>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Apellido</label>
+                    <input type="text" class="form-control" formControlName="apellido" placeholder="Agregue apellido">
+                    <div *ngIf="clientForm.controls['apellido'].invalid && clientForm.controls['apellido'].dirty" class="alert alert-danger" role="alert">
+                    
+                        <span *ngIf="clientForm.controls['apellido'].errors.required">Campo requerido</span>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Registro</label>
+                    <input type="text" class="form-control" formControlName="registro" placeholder="Numero de registro">
+                    <div *ngIf="clientForm.controls['registro'].invalid && clientForm.controls['registro'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="clientForm.controls['registro'].errors.required">Campo requerido</span>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Correo</label>
+                    <input type="email" class="form-control" formControlName="correo" placeholder="Numero de registro">
+                    <div *ngIf="clientForm.controls['correo'].invalid && clientForm.controls['correo'].dirty" class="alert alert-danger" role="alert">
+                    
+                        <span *ngIf="clientForm.controls['correo'].errors.required">Campo requerido</span>
+                        <span *ngIf="clientForm.controls['correo'].errors.email">El correo no es valido</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" formControlName="fechaNacimiento" placeholder="Agregue Fecha Nacimiento">
+                    <div *ngIf="clientForm.controls['fechaNacimiento'].invalid && clientForm.controls['fechaNacimiento'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="clientForm.controls['fechaNacimiento'].errors.required">Campo requerido</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+
+                <div class="form-group">
+                    <label for="">Telefono</label>
+                    <input type="tel" class="form-control" formControlName="telefono" placeholder="Agregue telefono">
+                    <div *ngIf="clientForm.controls['telefono'].invalid && clientForm.controls['telefono'].dirty" class="alert alert-danger" role="alert">
+                    
+                        <span *ngIf="clientForm.controls['telefono'].errors.required">Campo requerido</span>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-12">
+
+                <div class="form-group">
+                    <label for="">Imagen</label>
+                    <input type="file" class="form-control-file" formControlName="imgUrl" placeholder="Agregue imagen">
+                    <div *ngIf="clientForm.controls['imgUrl'].invalid && clientForm.controls['imgUrl'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="clientForm.controls['imgUrl'].errors.required">Campo requerido</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-12">
+                <progressbar [value]="22" type="danger" [striped]="true">22%</progressbar>
+            </div>
+
+            <br><br>
+        </div>
+        <button class="btn btn-primary" [disabled]="clientForm.invalid" (click)="add()">Registrar</button>
+
+    </form>
+
+</div>
