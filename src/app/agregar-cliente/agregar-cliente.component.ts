@@ -14,7 +14,7 @@ export class AgregarClienteComponent implements OnInit {
   clientForm: FormGroup;
   percentage: number;
   imgUrl: string;
-  editable: boolean = false;
+  editable = false;
   id: string;
 
   constructor(
@@ -45,7 +45,7 @@ export class AgregarClienteComponent implements OnInit {
 
     if (this.id != undefined) {
       this.editable = true;
-      
+
       this.db.doc<any>('clientes/' + this.id).valueChanges().subscribe((client) => {
 
         console.log(client);
@@ -108,7 +108,7 @@ export class AgregarClienteComponent implements OnInit {
     this.clientForm.value.imgUrl = this.imgUrl;
     this.clientForm.value.fechaNacimiento = new Date(this.clientForm.value.fechaNacimiento);
 
-    this.db.doc('clientes/' + this.id).update(this.clientForm.value).then((result) =>{
+    this.db.doc('clientes/' + this.id).update(this.clientForm.value).then((result) => {
       console.log('Updated');
       this.messageService.successMessage('Actualizado', 'Se actualizó el cliente');
 

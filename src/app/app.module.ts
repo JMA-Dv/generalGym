@@ -25,6 +25,7 @@ import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.compo
 
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { MessagesService } from './services/messages.service';
+import { PreciosComponent } from './precios/precios.component';
 
 
 
@@ -34,7 +35,8 @@ import { MessagesService } from './services/messages.service';
     LoginComponent,
     EncabezadoComponent,
     ListadoClientesComponent,
-    AgregarClienteComponent
+    AgregarClienteComponent,
+    PreciosComponent
   ],
   imports: [
     BrowserModule,
