@@ -24,6 +24,10 @@ import { ListadoClientesComponent } from './listado-clientes/listado-clientes.co
 import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.component';
 
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { MessagesService } from './services/messages.service';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,8 +51,8 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
   ],
   providers: [
     AngularFirestore,
-    AngularFireAuth
-
+    AngularFireAuth,
+    MessagesService
   ],
   bootstrap: [AppComponent]
 })
