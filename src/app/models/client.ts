@@ -12,7 +12,9 @@ export class Client{
     ref: DocumentReference;
     visible: Boolean;
 
+
     constructor() {
+
 
     }
 }

@@ -8,5 +8,4 @@ export class Price {
     tipoDuracion: number;
     ref: DocumentReference;
 
-
 }
