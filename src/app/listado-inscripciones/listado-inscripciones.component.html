@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Fecha Inicio</th>
+            <th scope="col">Fecha Final</th>
+            <th scope="col">Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let inscription of inscriptions">
+            <th scope="row">{{inscription.getClient.nombre}} {{inscription.getClient.apellido}}</th>
+            <td>{{inscription.fecha | date}}</td>
+            <td>{{inscription.fechaFinal | date}}</td>
+            <td>{{inscription.cliente}}</td>
+            <td><img width="50px" [src]="inscription.getClient.imgUrl"></td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

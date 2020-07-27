@@ -21,4 +21,10 @@ npm install bootstrap
 ** ngx-bootstrap**
 npm install ngx-bootstrap --save
 
+**ngx- Spinner**
+npm install ngx-spinner --save
+
 ---
+
+** Sweet Alert 2 ** 
+npm install sweetalert2
